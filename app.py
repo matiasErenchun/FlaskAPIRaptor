@@ -1,6 +1,6 @@
 from flask import Flask, jsonify, request
 from flaskext.mysql import MySQL
-from flask_restful import Resource, Api
+from flask_restful import Resource, Api, abort
 from flask_cors import CORS
 
 # creamos la instancia de flask
@@ -66,7 +66,12 @@ def get():
         cursor = conn.cursor()
         cursor.execute("""select * from detections""")
         rows = cursor.fetchall()
-        return jsonify(rows)
+        if rows:
+            print(rows)
+            diccionario = {"id": rows[0][0], "fecha": rows[0][1], "userIdT": rows[0][2], "url": rows[0][3]}
+            return jsonify(diccionario)
+        else:
+            abort(404, message="Todo {} doesn't exist")
     except Exception as e:
         print(e)
     finally:
