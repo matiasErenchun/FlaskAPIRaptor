@@ -79,6 +79,32 @@ def get():
         conn.close()
 
 
+@app.route('/imagen', methods=['POST'])
+def getimage():
+    if request.method == 'POST':
+        if 'id' in request.headers:
+            id = request.headers['id']
+            print("id pedido"+str(id))
+            try:
+                conn = mysql.connect()
+                cursor = conn.cursor()
+                cursor.execute("""select * from detections WHERE idDetection=%s""", id)
+                rows = cursor.fetchall()
+                if rows:
+                    print(rows)
+                    diccionario = {"id": rows[0][0], "fecha": rows[0][1], "userIdT": rows[0][2], "url": rows[0][3]}
+                    return jsonify(diccionario)
+                else:
+                    abort(404, message="error id miss")
+            except Exception as e:
+                print(e)
+            finally:
+                cursor.close()
+                conn.close()
+        else:
+            abort(404, message="id error")
+
+
 @app.route('/')
 def hello_world():  # put application's code here
     return 'Hello World!'
