@@ -1,7 +1,8 @@
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, Response
 from flaskext.mysql import MySQL
 from flask_restful import Resource, Api, abort
 from flask_cors import CORS
+import datetime
 
 # creamos la instancia de flask
 app = Flask(__name__)
@@ -80,11 +81,11 @@ def get():
 
 
 @app.route('/imagen', methods=['POST'])
-def getimage():
+def get_image():
     if request.method == 'POST':
         if 'id' in request.headers:
             id = request.headers['id']
-            print("id pedido"+str(id))
+            print("id pedido" + str(id))
             try:
                 conn = mysql.connect()
                 cursor = conn.cursor()
@@ -103,6 +104,34 @@ def getimage():
                 conn.close()
         else:
             abort(404, message="id error")
+    else:
+        abort(404, message="method error")
+
+
+@app.route('/addimagen', methods=['POST'])
+def add_imagen():
+    if request.method == 'POST':
+        if 'dateDetection' in request.headers:
+            if 'IdTelegramUser' in request.headers:
+                if 'urlImagen' in request.headers:
+                    dateImagen = datetime.datetime.strptime(request.headers['dateDetection'], '%Y-%m-%d %H:%M:%S.%f')
+                    id = int(request.headers['IdTelegramUser'])
+                    url = request.headers['urlImagen']
+                    conn = mysql.connect()
+                    cursor = conn.cursor()
+                    cursor.execute("""INSERT INTO detections (dateDetection, IdTelegramUser, urlImagen)
+VALUES(%s ,%s,%s)""", (dateImagen, id, url))
+                    conn.commit()
+                    print(str(dateImagen) + "- -" + str(id) + "- -" + "- -" + url)
+                    return Response("{'a':'b'}", status=201, mimetype='application/json')
+                else:
+                    abort(404, message="url error")
+            else:
+                abort(404, message="id error")
+        else:
+            abort(404, message="date error")
+    else:
+        abort(404, message="method error")
 
 
 @app.route('/')
