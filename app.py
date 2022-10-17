@@ -3,6 +3,7 @@ from flaskext.mysql import MySQL
 from flask_restful import Resource, Api, abort
 from flask_cors import CORS
 import datetime
+import raptorAlerterBot
 
 # creamos la instancia de flask
 app = Flask(__name__)
@@ -85,14 +86,12 @@ def get_image():
     if request.method == 'POST':
         if 'id' in request.headers:
             id = request.headers['id']
-            print("id pedido" + str(id))
             try:
                 conn = mysql.connect()
                 cursor = conn.cursor()
                 cursor.execute("""select * from detections WHERE idDetection=%s""", id)
                 rows = cursor.fetchall()
-                if rows:
-                    print(rows)
+                if len(rows) > 0:
                     diccionario = {"id": rows[0][0], "fecha": rows[0][1], "userIdT": rows[0][2], "url": rows[0][3]}
                     return jsonify(diccionario)
                 else:
@@ -108,6 +107,17 @@ def get_image():
         abort(404, message="method error")
 
 
+def get_max_id_detections():
+    conn = mysql.connect()
+    cursor = conn.cursor()
+    cursor.execute("""SELECT idDetection FROM detections ORDER BY idDetection DESC LIMIT 1""")
+    row = cursor.fetchall()
+    if (len(row) > 0):
+        return row[0][0]
+    else:
+        return -1
+
+
 @app.route('/addimagen', methods=['POST'])
 def add_imagen():
     if request.method == 'POST':
@@ -117,13 +127,19 @@ def add_imagen():
                     dateImagen = datetime.datetime.strptime(request.headers['dateDetection'], '%Y-%m-%d %H:%M:%S.%f')
                     id = int(request.headers['IdTelegramUser'])
                     url = request.headers['urlImagen']
+                    preid = get_max_id_detections()
                     conn = mysql.connect()
                     cursor = conn.cursor()
                     cursor.execute("""INSERT INTO detections (dateDetection, IdTelegramUser, urlImagen)
 VALUES(%s ,%s,%s)""", (dateImagen, id, url))
                     conn.commit()
-                    print(str(dateImagen) + "- -" + str(id) + "- -" + "- -" + url)
-                    return Response("{'a':'b'}", status=201, mimetype='application/json')
+                    postid = get_max_id_detections()
+                    if preid < postid:
+                        print(str(dateImagen) + "- -" + str(id) + "- -" + "- -" + url + "- id:" + str(postid))
+                        raptorAlerterBot.send_messaje(postid)
+                        return Response("{'a':'b'}", status=201, mimetype='application/json')
+                    else:
+                        abort(500, message="error data base")
                 else:
                     abort(404, message="url error")
             else:
