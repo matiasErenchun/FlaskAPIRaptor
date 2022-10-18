@@ -150,6 +150,27 @@ VALUES(%s ,%s,%s)""", (dateImagen, id, url))
         abort(404, message="method error")
 
 
+@app.route('/save_validation', methods=['POST'])
+def save_validation():
+    if request.method == 'POST':
+        if not ('idDetection' in request.headers):
+            abort(404, message="id error")
+        if not ('selectedOption' in request.headers):
+            abort(404, message="option error")
+        if not ('comments' in request.headers):
+            abort(404, message="comments error")
+        id = int(request.headers['idDetection'])
+        option = int(request.headers['selectedOption'])
+        comment = request.headers['comments']
+        conn = mysql.connect()
+        cursor = conn.cursor()
+        cursor.execute("""INSERT INTO validations (idDetection, selectedOption, comments)
+        VALUES(%s ,%s,%s)""", (id, option, comment))
+        conn.commit()
+        return Response("{'a':'b'}", status=201, mimetype='application/json')
+    else:
+        abort(404, message="method error")
+
 @app.route('/')
 def hello_world():  # put application's code here
     return 'Hello World!'
