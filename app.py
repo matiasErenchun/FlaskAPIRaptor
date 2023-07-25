@@ -4,6 +4,7 @@ from flask_restful import Resource, Api, abort
 from flask_cors import CORS
 import datetime
 import raptorAlerterBot
+import os
 
 # creamos la instancia de flask
 app = Flask(__name__)
@@ -18,7 +19,12 @@ CORS(app)
 
 
 def readcredentials(texto):
-    f = open(texto, "r")
+    directorio_actual = os.path.dirname(__file__)
+    print(directorio_actual)
+    # Combinar la ruta del directorio actual con la ruta relativa del archivo
+    ruta_archivo = os.path.join(directorio_actual, texto)
+    print(ruta_archivo)
+    f = open(ruta_archivo, "r")
     texto = f.readline()
     tokenizetext = texto.split()
     user_name = tokenizetext[1]
@@ -35,7 +41,7 @@ def readcredentials(texto):
     return user_name, password, database_name, server_name
 
 
-user_name, password, database_name, server_name = readcredentials("secrets.txt")
+user_name, password, database_name, server_name = readcredentials('secrets.txt')
 app.config['MYSQL_DATABASE_USER'] = user_name
 app.config['MYSQL_DATABASE_PASSWORD'] = password
 app.config['MYSQL_DATABASE_DB'] = database_name
