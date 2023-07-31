@@ -1,9 +1,9 @@
 from flask import Flask, jsonify, request, Response
 from flaskext.mysql import MySQL
-from flask_restful import Resource, Api, abort
+from flask_restful import Api, abort
 from flask_cors import CORS
 import datetime
-import raptorAlerterBot
+from RaptorAlertBot import raptorAlerterBot
 import os
 
 # creamos la instancia de flask
