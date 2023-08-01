@@ -1,16 +1,34 @@
-from flask import Flask, jsonify, request, Response
+from flask import Flask, jsonify, request, Response, g
 from flaskext.mysql import MySQL
 from flask_restful import Api, abort
 from flask_cors import CORS
 import datetime
-from RaptorAlertBot import raptorAlerterBot
 import os
+from RaptorAlertBot import raptorAlerterBot
+from Repositories.ValidationResultRepositoryFile import ValidationResultRepository
+
 
 # creamos la instancia de flask
 app = Flask(__name__)
 
 # creamos la insyancia de mysql
 mysql = MySQL()
+
+
+def get_db():
+    if 'db' not in g:
+        # Crear una nueva conexión y agregarla al contexto de la aplicación
+        g.db = mysql.connect()
+    return g.db
+
+
+@app.teardown_appcontext
+def close_db(exception):
+    # Cerrar la conexión cuando se termina el contexto de la aplicación
+    db = g.pop('db', None)
+    if db is not None:
+        db.close()
+
 
 # creamos la instancia de api de restful
 api = Api(app)
@@ -66,7 +84,7 @@ class DetectionList(Resource):
             conn.close()
 '''
 
-
+#codigos de respuesta https://developer.mozilla.org/es/docs/Web/HTTP/Status agregar a documento.
 @app.route('/gets')
 def get():
     try:
@@ -165,17 +183,19 @@ def save_validation():
             abort(404, message="option error")
         if not ('comments' in request.headers):
             abort(404, message="comments error")
-        id = int(request.headers['idDetection'])
+        id_validation = int(request.headers['idDetection'])
         option = int(request.headers['selectedOption'])
         comment = request.headers['comments']
-        conn = mysql.connect()
-        cursor = conn.cursor()
-        cursor.execute("""INSERT INTO validations (idDetection, selectedOption, comments)
-        VALUES(%s ,%s,%s)""", (id, option, comment))
-        conn.commit()
-        return Response("{'a':'b'}", status=201, mimetype='application/json')
+        conn = get_db()
+        try:
+            validation_result = ValidationResultRepository(conn)
+            validation_result.save_validation_result(id_validation, option, comment)
+            return Response("{'a':'b'}", status=201, mimetype='application/json')
+        except Exception as e:
+            abort(500, message="Internal Server Error")
     else:
-        abort(404, message="method error")
+        abort(405, message="Method Not Allowed")
+
 
 @app.route('/')
 def hello_world():  # put application's code here

@@ -6,3 +6,11 @@ secrets.txt
 token
 
 secrets.txt
+
+Interfaces/__pycache__/
+
+RaptorAlertBot/__pycache__/
+
+Repositories/__pycache__/
+
+__pycache__/
