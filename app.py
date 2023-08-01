@@ -7,7 +7,6 @@ import os
 from RaptorAlertBot import raptorAlerterBot
 from Repositories.ValidationResultRepositoryFile import ValidationResultRepository
 
-
 # creamos la instancia de flask
 app = Flask(__name__)
 
@@ -84,7 +83,8 @@ class DetectionList(Resource):
             conn.close()
 '''
 
-#codigos de respuesta https://developer.mozilla.org/es/docs/Web/HTTP/Status agregar a documento.
+
+# codigos de respuesta https://developer.mozilla.org/es/docs/Web/HTTP/Status agregar a documento.
 @app.route('/gets')
 def get():
     try:
@@ -142,59 +142,54 @@ def get_max_id_detections():
         return -1
 
 
-@app.route('/addimagen', methods=['POST'])
-def add_imagen():
-    if request.method == 'POST':
-        if 'dateDetection' in request.headers:
-            if 'IdTelegramUser' in request.headers:
-                if 'urlImagen' in request.headers:
-                    dateImagen = datetime.datetime.strptime(request.headers['dateDetection'], '%Y-%m-%d %H:%M:%S.%f')
-                    id = int(request.headers['IdTelegramUser'])
-                    url = request.headers['urlImagen']
-                    preid = get_max_id_detections()
-                    conn = mysql.connect()
-                    cursor = conn.cursor()
-                    cursor.execute("""INSERT INTO detections (dateDetection, IdTelegramUser, urlImagen)
-VALUES(%s ,%s,%s)""", (dateImagen, id, url))
-                    conn.commit()
-                    postid = get_max_id_detections()
-                    if preid < postid:
-                        print(str(dateImagen) + "- -" + str(id) + "- -" + "- -" + url + "- id:" + str(postid))
-                        raptorAlerterBot.send_messaje(postid)
-                        return Response("{'a':'b'}", status=201, mimetype='application/json')
-                    else:
-                        abort(500, message="error data base")
-                else:
-                    abort(404, message="url error")
-            else:
-                abort(404, message="id error")
-        else:
-            abort(404, message="date error")
-    else:
-        abort(404, message="method error")
+@app.route('/addDetecction', methods=['POST'])
+def add_detecction():
+    if request.method != 'POST':
+        abort(405, message="method error")
+    if not ('dateDetection' in request.headers):
+        abort(404, message="date error")
+    if not ('IdTelegramUser' in request.headers):
+        abort(404, message="id error")
+    if not ('urlImagen' in request.headers):
+        abort(404, message="url error")
+
+    date_imagen = datetime.datetime.strptime(request.headers['dateDetection'], '%Y-%m-%d %H:%M:%S.%f')
+    telegram_user_id = int(request.headers['IdTelegramUser'])
+    url = request.headers['urlImagen']
+    preid = get_max_id_detections()
+    conn = mysql.connect()
+    cursor = conn.cursor()
+    cursor.execute("""INSERT INTO detections (dateDetection, IdTelegramUser, urlImagen)
+VALUES(%s ,%s,%s)""", (date_imagen, telegram_user_id, url))
+    conn.commit()
+    postid = get_max_id_detections()
+    if preid >= postid:
+        abort(500, message="error data base")
+    print(str(telegram_user_id) + "- -" + str(id) + "- -" + "- -" + url + "- id:" + str(postid))
+    raptorAlerterBot.send_messaje(postid)
+    return Response("{'a':'b'}", status=201, mimetype='application/json')
 
 
 @app.route('/save_validation', methods=['POST'])
 def save_validation():
-    if request.method == 'POST':
-        if not ('idDetection' in request.headers):
-            abort(404, message="id error")
-        if not ('selectedOption' in request.headers):
-            abort(404, message="option error")
-        if not ('comments' in request.headers):
-            abort(404, message="comments error")
-        id_validation = int(request.headers['idDetection'])
-        option = int(request.headers['selectedOption'])
-        comment = request.headers['comments']
-        conn = get_db()
-        try:
-            validation_result = ValidationResultRepository(conn)
-            validation_result.save_validation_result(id_validation, option, comment)
-            return Response("{'a':'b'}", status=201, mimetype='application/json')
-        except Exception as e:
-            abort(500, message="Internal Server Error")
-    else:
+    if request.method != 'POST':
         abort(405, message="Method Not Allowed")
+    if not ('idDetection' in request.headers):
+        abort(404, message="id error")
+    if not ('selectedOption' in request.headers):
+        abort(404, message="option error")
+    if not ('comments' in request.headers):
+        abort(404, message="comments error")
+    id_detection = int(request.headers['idDetection'])
+    option = int(request.headers['selectedOption'])
+    comment = request.headers['comments']
+    conn = get_db()
+    try:
+        validation_result = ValidationResultRepository(conn)
+        validation_result.save_validation_result(id_detection, option, comment)
+        return Response("{'a':'b'}", status=201, mimetype='application/json')
+    except Exception as e:
+        abort(500, message="Internal Server Error")
 
 
 @app.route('/')
