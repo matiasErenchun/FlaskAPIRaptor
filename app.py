@@ -6,6 +6,7 @@ import datetime
 import os
 from RaptorAlertBot import raptorAlerterBot
 from Repositories.ValidationResultRepositoryFile import ValidationResultRepository
+from Repositories.DetectionsRepositoryFile import DetectionsRepository
 
 # creamos la instancia de flask
 app = Flask(__name__)
@@ -67,22 +68,6 @@ app.config['MYSQL_DATABASE_HOST'] = server_name
 # inicializamos la extension de MySQL
 mysql.init_app(app)
 
-'''
-class DetectionList(Resource):
-    def get(self):
-        try:
-            conn = mysql.connect()
-            cursor = conn.cursor()
-            cursor.execute("""select * from detections""")
-            rows = cursor.fetchall()
-            return jsonify(rows)
-        except Exception as e:
-            print(e)
-        finally:
-            cursor.close()
-            conn.close()
-'''
-
 
 # codigos de respuesta https://developer.mozilla.org/es/docs/Web/HTTP/Status agregar a documento.
 @app.route('/gets')
@@ -107,39 +92,22 @@ def get():
 
 @app.route('/imagen', methods=['POST'])
 def get_image():
-    if request.method == 'POST':
-        if 'id' in request.headers:
-            id = request.headers['id']
-            try:
-                conn = mysql.connect()
-                cursor = conn.cursor()
-                cursor.execute("""select * from detections WHERE idDetection=%s""", id)
-                rows = cursor.fetchall()
-                if len(rows) > 0:
-                    diccionario = {"id": rows[0][0], "fecha": rows[0][1], "userIdT": rows[0][2], "url": rows[0][3]}
-                    return jsonify(diccionario)
-                else:
-                    abort(404, message="error id miss")
-            except Exception as e:
-                print(e)
-            finally:
-                cursor.close()
-                conn.close()
+    if request.method != 'POST':
+        abort(405, message="method error")
+    if not ('id' in request.headers):
+        abort(404, message="id error")
+    id_detection = request.headers['id']
+    try:
+        conn = get_db()
+        dection_result = DetectionsRepository(conn)
+        rows = dection_result.get_detection(id_detection)
+        if len(rows) > 0:
+            diccionario = {"id": rows[0][0], "fecha": rows[0][1], "userIdT": rows[0][2], "url": rows[0][3]}
+            return jsonify(diccionario)
         else:
-            abort(404, message="id error")
-    else:
-        abort(404, message="method error")
-
-
-def get_max_id_detections():
-    conn = mysql.connect()
-    cursor = conn.cursor()
-    cursor.execute("""SELECT idDetection FROM detections ORDER BY idDetection DESC LIMIT 1""")
-    row = cursor.fetchall()
-    if (len(row) > 0):
-        return row[0][0]
-    else:
-        return -1
+            abort(404, message="error id miss")
+    except Exception as e:
+        print(e)
 
 
 @app.route('/addDetecction', methods=['POST'])
@@ -156,18 +124,16 @@ def add_detecction():
     date_imagen = datetime.datetime.strptime(request.headers['dateDetection'], '%Y-%m-%d %H:%M:%S.%f')
     telegram_user_id = int(request.headers['IdTelegramUser'])
     url = request.headers['urlImagen']
-    preid = get_max_id_detections()
-    conn = mysql.connect()
-    cursor = conn.cursor()
-    cursor.execute("""INSERT INTO detections (dateDetection, IdTelegramUser, urlImagen)
-VALUES(%s ,%s,%s)""", (date_imagen, telegram_user_id, url))
-    conn.commit()
-    postid = get_max_id_detections()
-    if preid >= postid:
-        abort(500, message="error data base")
-    print(str(telegram_user_id) + "- -" + str(id) + "- -" + "- -" + url + "- id:" + str(postid))
-    raptorAlerterBot.send_messaje(postid)
-    return Response("{'a':'b'}", status=201, mimetype='application/json')
+    try:
+        conn = get_db()
+        dection_result = DetectionsRepository(conn)
+        dection_result.save_detection(telegram_user_id, date_imagen, url)
+        postid = dection_result.get_max_id_detections()
+        print(str(telegram_user_id) + "- -" + str(id) + "- -" + "- -" + url + "- id:" + str(postid))
+        raptorAlerterBot.send_messaje(postid)
+        return Response("{'a':'b'}", status=201, mimetype='application/json')
+    except Exception as e:
+        abort(500, message="Internal Server Error")
 
 
 @app.route('/save_validation', methods=['POST'])
@@ -183,8 +149,8 @@ def save_validation():
     id_detection = int(request.headers['idDetection'])
     option = int(request.headers['selectedOption'])
     comment = request.headers['comments']
-    conn = get_db()
     try:
+        conn = get_db()
         validation_result = ValidationResultRepository(conn)
         validation_result.save_validation_result(id_detection, option, comment)
         return Response("{'a':'b'}", status=201, mimetype='application/json')

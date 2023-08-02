@@ -3,11 +3,11 @@ from abc import ABC, abstractmethod
 
 class DetectionsInterface(ABC):
     @abstractmethod
-    def save_detection(self):
+    def save_detection(self, id_telegram, date, url_image):
         pass
 
     @abstractmethod
-    def get_detection(self):
+    def get_detection(self, id):
         pass
 
     @abstractmethod

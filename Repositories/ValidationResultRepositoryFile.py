@@ -8,11 +8,16 @@ class ValidationResultRepository(ValidationResultInterface):
     def save_validation_result(self, id_detection, option, comment):
         # se peuden agregar mucha mas logica, con respecto a la validacion de los campos para evitar posibles ataques.
         # por otra parte tanbien se puede mejorar el manejo de lso errores
-        cursor = self.conn.cursor()
-        cursor.execute("""INSERT INTO validations (idDetection, selectedOption, comments)
-                VALUES(%s ,%s,%s)""", (id_detection, option, comment))
-        self.conn.commit()
-        return id_detection
+        try:
+
+            cursor = self.conn.cursor()
+            cursor.execute("""INSERT INTO validations (id_detection, selectedOption, comments)
+                    VALUES(%s ,%s,%s)""", (id_detection, option, comment))
+            self.conn.commit()
+            return id_detection
+        except Exception as e:
+            print(e)
+            raise Exception()
 
     def get_all_validations_result(self):
         pass
