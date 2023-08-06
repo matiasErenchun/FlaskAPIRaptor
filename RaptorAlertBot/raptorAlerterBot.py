@@ -14,8 +14,8 @@ def sendtxt(token, id, texto):
     bot.sendMessage(id, texto)
 
 def send_messaje(id):
-    urlToken = "E:\\repoGit\\codigo-memoria\\TelegramBot\\token"
+    urlToken = "E:\\resposGit\\FlaskAPIRaptor\\RaptorAlertBot\\teletoken.txt"
     mensaje = "rapaz detectada url: http://localhost:8080/#/"+str(id)
     token = readtoke(urlToken)
-    miId = 5274207076
+    miId = 6382769746
     sendtxt(token, miId, mensaje)
