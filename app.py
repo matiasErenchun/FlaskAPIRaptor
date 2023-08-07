@@ -70,13 +70,17 @@ mysql.init_app(app)
 
 
 # codigos de respuesta https://developer.mozilla.org/es/docs/Web/HTTP/Status agregar a documento.
-@app.route('/gets')
-def get():
+@app.route('/getsAll')
+def get_all_images():
+    if request.method != 'GET':
+        abort(405, message="method error")
+    if not ('source' in request.headers):
+        abort(404, message="source error")
+    source = request.headers['source']
     try:
-        conn = mysql.connect()
-        cursor = conn.cursor()
-        cursor.execute("""select * from detections""")
-        rows = cursor.fetchall()
+        conn = get_db()
+        dection_result = DetectionsRepository(conn)
+        rows = dection_result.get_all_detections(source)
         if rows:
             print(rows)
             diccionario = {"id": rows[0][0], "fecha": rows[0][1], "userIdT": rows[0][2], "url": rows[0][3]}
@@ -84,10 +88,7 @@ def get():
         else:
             abort(404, message="Todo {} doesn't exist")
     except Exception as e:
-        print(e)
-    finally:
-        cursor.close()
-        conn.close()
+        abort(500, message="Internal Server Error")
 
 
 @app.route('/imagen', methods=['POST'])
@@ -107,7 +108,7 @@ def get_image():
         else:
             abort(404, message="error id miss")
     except Exception as e:
-        print(e)
+        abort(500, message="Internal Server Error")
 
 
 @app.route('/addDetecction', methods=['POST'])
@@ -120,14 +121,20 @@ def add_detecction():
         abort(404, message="id error")
     if not ('urlImagen' in request.headers):
         abort(404, message="url error")
+    if not ('source' in request.headers):
+        abort(404, message="source error")
+    if not ('class' in request.headers):
+        abort(404, message="class error")
 
     date_imagen = datetime.datetime.strptime(request.headers['dateDetection'], '%Y-%m-%d %H:%M:%S.%f')
     telegram_user_id = int(request.headers['IdTelegramUser'])
     url = request.headers['urlImagen']
+    source = request.headers['source']
+    detection_class = request.headers['class']
     try:
         conn = get_db()
         dection_result = DetectionsRepository(conn)
-        dection_result.save_detection(telegram_user_id, date_imagen, url)
+        dection_result.save_detection(telegram_user_id, date_imagen, url, source, detection_class)
         postid = dection_result.get_max_id_detections()
         print(str(telegram_user_id) + "- -" + str(id) + "- -" + "- -" + url + "- id:" + str(postid))
         raptorAlerterBot.send_messaje(postid)
@@ -158,9 +165,29 @@ def save_validation():
         abort(500, message="Internal Server Error")
 
 
+@app.route('/validation', methods=['POST'])
+def get_validation():
+    if request.method != 'POST':
+        abort(405, message="method error")
+    if not ('id' in request.headers):
+        abort(404, message="id error")
+    id_detection = request.headers['id']
+    try:
+        conn = get_db()
+        dection_result = ValidationResultRepository(conn)
+        rows = dection_result.get_validation_result_by_id(id_detection)
+        if len(rows) > 0:
+            diccionario = {"id": rows[0][0], "fecha": rows[0][1], "userIdT": rows[0][2], "url": rows[0][3]}
+            return jsonify(diccionario)
+        else:
+            abort(404, message="error id miss")
+    except Exception as e:
+        abort(500, message="Internal Server Error")
+
+
 @app.route('/')
 def hello_world():  # put application's code here
-    return 'Hello World!'
+    abort(404, message="error")
 
 
 # api.add_resource(DetectionList, '/detections', endpoint='detections')

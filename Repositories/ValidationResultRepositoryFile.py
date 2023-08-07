@@ -19,8 +19,15 @@ class ValidationResultRepository(ValidationResultInterface):
             print(e)
             raise Exception()
 
-    def get_all_validations_result(self):
-        pass
+    def get_all_validations_result(self, source):
+        conn = self.conn.cursor()
+        cursor = conn.cursor()
+        cursor.execute("""select * from validations""")
+        rows = cursor.fetchall()
+        return rows
 
     def get_validation_result_by_id(self, id_validation):
-        pass
+        cursor = self.conn.cursor()
+        cursor.execute("""select * from validations WHERE id=%s""", id)
+        rows = cursor.fetchall()
+        return rows

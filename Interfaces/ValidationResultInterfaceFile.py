@@ -8,9 +8,9 @@ class ValidationResultInterface(ABC):
         pass
 
     @abstractmethod
-    def get_all_validations_result(self):
+    def get_all_validations_result(self, source):
         pass
 
     @abstractmethod
-    def get_validation_result_by_id(self,id_validation):
+    def get_validation_result_by_id(self, id_validation):
         pass

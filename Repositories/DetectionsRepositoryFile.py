@@ -5,11 +5,11 @@ class DetectionsRepository(DetectionsInterface):
     def __init__(self, conexion):
         self.conn = conexion
 
-    def save_detection(self, id_telegram, date, url_image):
+    def save_detection(self, id_telegram, date, url_image, source, detection_class):
         try:
             cursor = self.conn.cursor()
-            cursor.execute("""INSERT INTO detections (dateDetection, IdTelegramUser, urlImagen)
-            VALUES(%s ,%s,%s)""", (date, id_telegram, url_image))
+            cursor.execute("""INSERT INTO detections (dateDetection, IdTelegramUser, urlImagen, source, class)
+            VALUES(%s ,%s,%s,%s,%s)""", (date, id_telegram, url_image, source, detection_class))
             self.conn.commit()
         except Exception as e:
             print(e)
@@ -21,8 +21,15 @@ class DetectionsRepository(DetectionsInterface):
         rows = cursor.fetchall()
         return rows
 
-    def get_all_detections(self):
-        pass
+    def get_all_detections(self, source):
+        conn = self.conn.cursor()
+        cursor = conn.cursor()
+        if source == 'raptor' or source == 'bird':
+            cursor.execute("""select * from detections where source=%s """, source)
+        else:
+            cursor.execute("""select * from detections""")
+        rows = cursor.fetchall()
+        return rows
 
     def get_max_id_detections(self):
         cursor = self.conn.cursor()
