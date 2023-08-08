@@ -16,3 +16,5 @@ Repositories/__pycache__/
 __pycache__/
 
 RaptorAlertBot/teletoken.txt
+
+.idea/

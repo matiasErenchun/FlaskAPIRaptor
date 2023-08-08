@@ -103,7 +103,9 @@ def get_image():
         dection_result = DetectionsRepository(conn)
         rows = dection_result.get_detection(id_detection)
         if len(rows) > 0:
-            diccionario = {"id": rows[0][0], "fecha": rows[0][1], "userIdT": rows[0][2], "url": rows[0][3]}
+            print(rows)
+            diccionario = {"id": rows[0][0], "userIdT": rows[0][1], "url": rows[0][2], "fecha": rows[0][3],
+                           "clase": rows[0][4]}
             return jsonify(diccionario)
         else:
             abort(404, message="error id miss")
