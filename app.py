@@ -70,9 +70,10 @@ mysql.init_app(app)
 
 
 # codigos de respuesta https://developer.mozilla.org/es/docs/Web/HTTP/Status agregar a documento.
-@app.route('/getsAll')
+@app.route('/getsAll', methods=['POST'])
 def get_all_images():
-    if request.method != 'GET':
+    if request.method != 'POST':
+        print(request.method)
         abort(405, message="method error")
     if not ('source' in request.headers):
         abort(404, message="source error")
@@ -82,12 +83,21 @@ def get_all_images():
         dection_result = DetectionsRepository(conn)
         rows = dection_result.get_all_detections(source)
         if rows:
-            print(rows)
-            diccionario = {"id": rows[0][0], "fecha": rows[0][1], "userIdT": rows[0][2], "url": rows[0][3]}
-            return jsonify(diccionario)
+            formatted_results = []
+            for row in rows:
+                obj = {
+                    'id': row[0],
+                    'telegramID': row[1],
+                    'url': row[2],
+                    'date': row[3],
+                    'class': row[4]
+                }
+                formatted_results.append(obj)
+            return jsonify(formatted_results)
         else:
             abort(404, message="Todo {} doesn't exist")
     except Exception as e:
+        print(e)
         abort(500, message="Internal Server Error")
 
 

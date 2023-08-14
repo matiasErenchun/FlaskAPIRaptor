@@ -22,8 +22,7 @@ class DetectionsRepository(DetectionsInterface):
         return rows
 
     def get_all_detections(self, source):
-        conn = self.conn.cursor()
-        cursor = conn.cursor()
+        cursor = self.conn.cursor()
         if source == 'raptor' or source == 'bird':
             cursor.execute("""select * from detections where source=%s """, source)
         else:
