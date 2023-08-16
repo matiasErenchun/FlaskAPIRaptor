@@ -11,7 +11,7 @@ class DetectionsInterface(ABC):
         pass
 
     @abstractmethod
-    def get_all_detections(self, source):
+    def get_all_detections(self, source, filter_class):
         pass
 
     @abstractmethod

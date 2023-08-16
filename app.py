@@ -77,11 +77,15 @@ def get_all_images():
         abort(405, message="method error")
     if not ('source' in request.headers):
         abort(404, message="source error")
+    if not ('class' in request.headers):
+        abort(404, message="source error")
     source = request.headers['source']
+    filter_class = request.headers['class']
+    print(source,filter_class)
     try:
         conn = get_db()
         dection_result = DetectionsRepository(conn)
-        rows = dection_result.get_all_detections(source)
+        rows = dection_result.get_all_detections(source, filter_class)
         if rows:
             formatted_results = []
             for row in rows:
@@ -95,6 +99,7 @@ def get_all_images():
                 formatted_results.append(obj)
             return jsonify(formatted_results)
         else:
+            #revisar que hacemos en este caso
             abort(404, message="Todo {} doesn't exist")
     except Exception as e:
         print(e)

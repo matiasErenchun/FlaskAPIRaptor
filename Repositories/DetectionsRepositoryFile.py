@@ -4,6 +4,8 @@ from Interfaces.DetectionsInterfaceFile import DetectionsInterface
 class DetectionsRepository(DetectionsInterface):
     def __init__(self, conexion):
         self.conn = conexion
+        self.types = ['ave_volando', 'ave_posada', 'ave_tierra', 'ave_rapaz_volando', 'ave_rapaz_posada',
+                      'ave_rapaz_tierra']
 
     def save_detection(self, id_telegram, date, url_image, source, detection_class):
         try:
@@ -21,10 +23,15 @@ class DetectionsRepository(DetectionsInterface):
         rows = cursor.fetchall()
         return rows
 
-    def get_all_detections(self, source):
+    def get_all_detections(self, source, filter_class):
         cursor = self.conn.cursor()
-        if source == 'raptor' or source == 'bird':
-            cursor.execute("""select * from detections where source=%s """, source)
+        if source == 'RaptorDetector' or source == 'BirdDetector':
+            if filter_class in self.types:
+                cursor.execute("""select * from detections where source=%s and class=%s """, (source, filter_class))
+            elif filter_class == "All":
+                cursor.execute("""select * from detections where source=%s """, source)
+        elif filter_class in self.types:
+            cursor.execute("""select * from detections where class=%s """,  filter_class)
         else:
             cursor.execute("""select * from detections""")
         rows = cursor.fetchall()
