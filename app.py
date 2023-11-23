@@ -4,9 +4,11 @@ from flask_restful import Api, abort
 from flask_cors import CORS
 import datetime
 import os
+from datetime import datetime
 from RaptorAlertBot import raptorAlerterBot
 from Repositories.ValidationResultRepositoryFile import ValidationResultRepository
 from Repositories.DetectionsRepositoryFile import DetectionsRepository
+import logging
 
 # creamos la instancia de flask
 app = Flask(__name__)
@@ -33,29 +35,39 @@ def close_db(exception):
 # creamos la instancia de api de restful
 api = Api(app)
 
+# Configurar el nivel de registro para capturar errores y superior (por ejemplo, info, warning, error)
+logging.basicConfig(filename='app.log', level=logging.ERROR)
+
 CORS(app)
 
 
 def readcredentials(texto):
     directorio_actual = os.path.dirname(__file__)
-    print(directorio_actual)
+    # print(directorio_actual)
     # Combinar la ruta del directorio actual con la ruta relativa del archivo
     ruta_archivo = os.path.join(directorio_actual, texto)
     print(ruta_archivo)
-    f = open(ruta_archivo, "r")
-    texto = f.readline()
-    tokenizetext = texto.split()
-    user_name = tokenizetext[1]
-    texto = f.readline()
-    tokenizetext = texto.split()
-    password = tokenizetext[1]
-    texto = f.readline()
-    tokenizetext = texto.split()
-    database_name = tokenizetext[1]
-    texto = f.readline()
-    tokenizetext = texto.split()
-    server_name = tokenizetext[1]
-    f.close()
+    if os.path.exists(ruta_archivo):
+        f = open(ruta_archivo, "r")
+        texto = f.readline()
+        tokenizetext = texto.split()
+        user_name = tokenizetext[1]
+        texto = f.readline()
+        tokenizetext = texto.split()
+        password = tokenizetext[1]
+        texto = f.readline()
+        tokenizetext = texto.split()
+        database_name = tokenizetext[1]
+        texto = f.readline()
+        tokenizetext = texto.split()
+        server_name = tokenizetext[1]
+        f.close()
+    else:
+        server_name = os.getenv('DB_HOST')
+        user_name = os.getenv('DB_USER')
+        password = os.getenv('DB_PASSWORD')
+        database_name = os.getenv('DB_NAME')
+
     return user_name, password, database_name, server_name
 
 
@@ -64,6 +76,7 @@ app.config['MYSQL_DATABASE_USER'] = user_name
 app.config['MYSQL_DATABASE_PASSWORD'] = password
 app.config['MYSQL_DATABASE_DB'] = database_name
 app.config['MYSQL_DATABASE_HOST'] = server_name
+app.config["DEBUG"] = True
 
 # inicializamos la extension de MySQL
 mysql.init_app(app)
@@ -79,13 +92,26 @@ def get_all_images():
         abort(404, message="source error")
     if not ('class' in request.headers):
         abort(404, message="source error")
+    if not ('beginning' in request.headers):
+        abort(404, message="source error")
+    if not ('end' in request.headers):
+        abort(404, message="source error")
+    if not ('page' in request.headers):
+        abort(404, message="source error")
+
+    page = int(request.headers['page'])
+    beginning = request.headers['beginning']
+    beginning = datetime.strptime(beginning, "%Y-%m-%dT%H:%M:%S.%fZ")
+    end = request.headers['end']
+    end = datetime.strptime(end,"%Y-%m-%dT%H:%M:%S.%fZ")
     source = request.headers['source']
     filter_class = request.headers['class']
-    print(source,filter_class)
+
+    print(source, filter_class, str(end))
     try:
         conn = get_db()
         dection_result = DetectionsRepository(conn)
-        rows = dection_result.get_all_detections(source, filter_class)
+        rows = dection_result.get_all_detections(source, filter_class,page,end,beginning)
         if rows:
             formatted_results = []
             for row in rows:
@@ -99,10 +125,10 @@ def get_all_images():
                 formatted_results.append(obj)
             return jsonify(formatted_results)
         else:
-            #revisar que hacemos en este caso
+            # revisar que hacemos en este caso
             abort(404, message="Todo {} doesn't exist")
     except Exception as e:
-        print(e)
+        logging.error(f'Error en la aplicación: {str(e)}', exc_info=True)
         abort(500, message="Internal Server Error")
 
 
@@ -209,4 +235,4 @@ def hello_world():  # put application's code here
 
 # api.add_resource(DetectionList, '/detections', endpoint='detections')
 if __name__ == '__main__':
-    app.run()
+    app.run(host="0.0.0.0", port=5000)

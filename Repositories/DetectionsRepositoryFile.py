@@ -23,17 +23,21 @@ class DetectionsRepository(DetectionsInterface):
         rows = cursor.fetchall()
         return rows
 
-    def get_all_detections(self, source, filter_class):
+    def get_all_detections(self, source, filter_class, page, end, beginning):
+        page = page * 6
         cursor = self.conn.cursor()
         if source == 'RaptorDetector' or source == 'BirdDetector':
             if filter_class in self.types:
-                cursor.execute("""select * from detections where source=%s and class=%s """, (source, filter_class))
+                cursor.execute(
+                    """SELECT * FROM detections WHERE source = %s AND class = %s AND dateDetection BETWEEN %s AND %s LIMIT %s,6""",
+                    (source, filter_class, beginning, end, page))
             elif filter_class == "All":
-                cursor.execute("""select * from detections where source=%s """, source)
+                cursor.execute("""select * from detections where source=%s AND dateDetection BETWEEN %s AND %s LIMIT %s,6""", (source,beginning,end,
+                               page))
         elif filter_class in self.types:
-            cursor.execute("""select * from detections where class=%s """,  filter_class)
+            cursor.execute("""select * from detections where class=%s AND dateDetection BETWEEN %s AND %s LIMIT %s,6""", (filter_class,beginning,end,page))
         else:
-            cursor.execute("""select * from detections""")
+            cursor.execute("""select * from detections where dateDetection BETWEEN %s AND %s LIMIT %s,6""",(beginning,end,page))
         rows = cursor.fetchall()
         return rows
 

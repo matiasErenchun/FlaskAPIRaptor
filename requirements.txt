@@ -1,6 +1,0 @@
-Flask~=2.3.2
-Flask-Cors==4.0.0
-Flask-MySQL==1.5.2
-Flask-RESTful==0.3.10
-telepot==12.7
-cryptography==41.0.3

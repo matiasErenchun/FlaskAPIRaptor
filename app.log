@@ -1,0 +1,375 @@
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.38:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 939-583-283
+INFO:werkzeug:127.0.0.1 - - [17/Oct/2023 14:31:10] "OPTIONS /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Oct/2023 14:31:10] "POST /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Oct/2023 14:31:49] "OPTIONS /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Oct/2023 14:31:49] "POST /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Oct/2023 14:31:55] "OPTIONS /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Oct/2023 14:31:55] "POST /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Oct/2023 14:31:55] "POST /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.38:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 939-583-283
+INFO:werkzeug:127.0.0.1 - - [21/Nov/2023 20:50:29] "OPTIONS /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Nov/2023 20:50:29] "[33mPOST /getsAll HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [21/Nov/2023 20:50:59] "OPTIONS /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Nov/2023 20:51:00] "[33mPOST /getsAll HTTP/1.1[0m" 404 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.38:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 939-583-283
+ERROR:werkzeug:127.0.0.1 - - [21/Nov/2023 20:51:58] code 400, message Bad request syntax ('\x16\x03\x01\x02\x00\x01\x00\x01ü\x03\x03¿þAÞn¸R\x8b¨\x99\x97µä\x11k')
+ERROR:werkzeug:127.0.0.1 - - [21/Nov/2023 20:51:58] code 400, message Bad request syntax ('\x16\x03\x01\x02\x00\x01\x00\x01ü\x03\x03ð¼é¦\x9eÝ!-7Nh\x911dÑ\x9b1=¬m\x8fThY±')
+INFO:werkzeug:127.0.0.1 - - [21/Nov/2023 20:51:58] "[31m[1m\x16\x03\x01\x02\x00\x01\x00\x01ü\x03\x03¿þAÞn¸R\x8b¨\x99\x97µä\x11k[0m" 400 -
+INFO:werkzeug:127.0.0.1 - - [21/Nov/2023 20:51:58] "[31m[1m\x16\x03\x01\x02\x00\x01\x00\x01ü\x03\x03ð¼é¦\x9eÝ!-7Nh\x911dÑ\x9b1=¬m\x8fThY±[0m" 400 -
+ERROR:werkzeug:127.0.0.1 - - [21/Nov/2023 20:51:58] code 400, message Bad request version ('0cµÿ\x81Z\x88À«1Mó;\x1bcÞ\x8föP\x8dtÙ*¢8\x80')
+INFO:werkzeug:127.0.0.1 - - [21/Nov/2023 20:51:59] "[31m[1m\x16\x03\x01\x02\x00\x01\x00\x01ü\x03\x03Á7ëÝ\x04\x0c¸Û.r`²g|÷¨K\x0cÄÌ\x1f\x09\x0cª+\x09hùUÊÐh 0cµÿ\x81Z\x88À«1Mó;\x1bcÞ\x8föP\x8dtÙ*¢8\x80[0m" 400 -
+ERROR:werkzeug:127.0.0.1 - - [21/Nov/2023 20:51:59] code 400, message Bad request version ('\x00\x04\x03\x00\x01\x02\x00')
+INFO:werkzeug:127.0.0.1 - - [21/Nov/2023 20:51:59] "[31m[1m\x16\x03\x01\x02\x00\x01\x00\x01ü\x03\x03Ñ\x09\x17\x12Ô\x065\x17^Ú¾Y\x92ÇÂR3Ã\x8e4ôÈÙ`±f\x9c\x86[²m+ |\x96ý§\x08\x89~äy\x10èÔÁ\x97\x1bÜgÝc\x04·eæu)\x1cÎ\x9aõ³Ò1\x00 \x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x00ÿ\x01\x00\x01\x93\x00\x00\x00\x0e\x00\x0c\x00\x00\x09localhost\x00\x0b\x00\x04\x03\x00\x01\x02\x00[0m" 400 -
+ERROR:werkzeug:127.0.0.1 - - [21/Nov/2023 20:51:59] code 400, message Bad request version ('\x00\x04\x03\x00\x01\x02\x00')
+INFO:werkzeug:127.0.0.1 - - [21/Nov/2023 20:51:59] "[31m[1m\x16\x03\x01\x02\x00\x01\x00\x01ü\x03\x03#þéÅÅðÂ%\x1eg1×ë!ÒÖä\x94®¼Èp©\x06÷PGlô0#\x7f #:ýIQ÷\x91Ù\x1f®hCæúÐ¼ó\x92@¥zÊøÐôê\x9eÍèÅw\x14\x00 \x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x00ÿ\x01\x00\x01\x93\x00\x00\x00\x0e\x00\x0c\x00\x00\x09localhost\x00\x0b\x00\x04\x03\x00\x01\x02\x00[0m" 400 -
+ERROR:werkzeug:127.0.0.1 - - [21/Nov/2023 20:51:59] code 400, message Bad request version ('\x00\x04\x03\x00\x01\x02\x00')
+INFO:werkzeug:127.0.0.1 - - [21/Nov/2023 20:51:59] "[31m[1m\x16\x03\x01\x02\x00\x01\x00\x01ü\x03\x03\x18÷ù\x93³A\x85>wX¶ß°^ª(³¯v]â\x89#1\x9e¹3Êµ¬êî ÕO×ûNèj\x0cÕ\x9c\x99×C8\x92a\x91vªõa\x0daxgÒÈú§ûs\x92\x00 \x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x00ÿ\x01\x00\x01\x93\x00\x00\x00\x0e\x00\x0c\x00\x00\x09localhost\x00\x0b\x00\x04\x03\x00\x01\x02\x00[0m" 400 -
+ERROR:werkzeug:127.0.0.1 - - [21/Nov/2023 20:52:00] code 400, message Bad request version ('\x00\x04\x03\x00\x01\x02\x00')
+INFO:werkzeug:127.0.0.1 - - [21/Nov/2023 20:52:00] "[31m[1m\x16\x03\x01\x02\x00\x01\x00\x01ü\x03\x03É¦_Ä\x94è@hÃkæþ\x88\x97ñfd\x1dÕ\x17\x0c'.I\x13p\\\x00xº.\x83 ù\x1dÉ«aó\x97,¤\x1b\x04s;¾\x98§Ú\x11©¶ÅÒ¯\x01ÅÄÇùßQ§H\x00 \x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x00ÿ\x01\x00\x01\x93\x00\x00\x00\x0e\x00\x0c\x00\x00\x09localhost\x00\x0b\x00\x04\x03\x00\x01\x02\x00[0m" 400 -
+ERROR:werkzeug:127.0.0.1 - - [21/Nov/2023 20:52:00] code 400, message Bad request version ('\x00\x04\x03\x00\x01\x02\x00')
+INFO:werkzeug:127.0.0.1 - - [21/Nov/2023 20:52:00] "[31m[1m\x16\x03\x01\x02\x00\x01\x00\x01ü\x03\x03$H;\x96\x1a\x90Ã\\ö\x08B°ô5D\x01\x85âqS\x17ÎwÎº#\x96\x0cÐ\x0e\x1b¸ ð«z«ÝÁ\x94)jA\x90\x09ß\x0cÆ±YP e\x04\x14/\x06\x8d\x05¦\x998ìÇI\x00 \x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x00ÿ\x01\x00\x01\x93\x00\x00\x00\x0e\x00\x0c\x00\x00\x09localhost\x00\x0b\x00\x04\x03\x00\x01\x02\x00[0m" 400 -
+ERROR:werkzeug:127.0.0.1 - - [21/Nov/2023 20:52:00] code 400, message Bad request version ('\x00\x04\x03\x00\x01\x02\x00')
+INFO:werkzeug:127.0.0.1 - - [21/Nov/2023 20:52:00] "[31m[1m\x16\x03\x01\x02\x00\x01\x00\x01ü\x03\x03Ax\x1aãi\x9cIÜ\x07S¾\x1c\x8b\x1eÖÄ!ª\x1fÉ\x03|vm\x10B¯ÃbpÜ¹ òj×N3]6¤§pY\x07\x09²È_Xçº\x1fÒpU\x83y)ý\x15¥c\x12±\x00 \x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x00ÿ\x01\x00\x01\x93\x00\x00\x00\x0e\x00\x0c\x00\x00\x09localhost\x00\x0b\x00\x04\x03\x00\x01\x02\x00[0m" 400 -
+ERROR:werkzeug:127.0.0.1 - - [21/Nov/2023 20:52:00] code 400, message Bad request version ('\x00\x04\x03\x00\x01\x02\x00')
+ERROR:werkzeug:127.0.0.1 - - [21/Nov/2023 20:52:00] code 400, message Bad request version ('\x00\x04\x03\x00\x01\x02\x00')
+INFO:werkzeug:127.0.0.1 - - [21/Nov/2023 20:52:00] "[31m[1m\x16\x03\x01\x02\x00\x01\x00\x01ü\x03\x03K\x91êiK\x80-\x8cWâ\x1eÿhA+ c\x9eíoàÀÕ?ä6\x92ËÁ´+Í \x12{3ü\x14~´%K,\x1d¤î_Óç\x1fn¶)\x12á\x91\x07*\x96gêBYÅì\x00 \x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x00ÿ\x01\x00\x01\x93\x00\x00\x00\x0e\x00\x0c\x00\x00\x09localhost\x00\x0b\x00\x04\x03\x00\x01\x02\x00[0m" 400 -
+INFO:werkzeug:127.0.0.1 - - [21/Nov/2023 20:52:00] "[31m[1m\x16\x03\x01\x02\x00\x01\x00\x01ü\x03\x03Nª}Ç±£*[Y=%÷\x063Nþ£ýà2\x82Ï-þ-RÔ5¸òâÊ \x03ÏèßcÅ.ßp<²:7\x17Gñ¯§ø\x1d\x92« +?\x93¶C®5ÜØ\x00 \x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x00ÿ\x01\x00\x01\x93\x00\x00\x00\x0e\x00\x0c\x00\x00\x09localhost\x00\x0b\x00\x04\x03\x00\x01\x02\x00[0m" 400 -
+ERROR:werkzeug:127.0.0.1 - - [21/Nov/2023 20:52:00] code 400, message Bad request version ('\x00\x04\x03\x00\x01\x02\x00')
+INFO:werkzeug:127.0.0.1 - - [21/Nov/2023 20:52:00] "[31m[1m\x16\x03\x01\x02\x00\x01\x00\x01ü\x03\x03ì\x81¾ì\x93Ü_¨Ba\x08F\x1a\x96\x8dF\x9c*ÿP\x9d:l\x0bk®\x00\x0e;Ì@ç ÒOîµrq\x91\x02l©»3\x02¾ý*\x16nË^IàOù\x0c\x8cÎ½¡°\x1bG\x00 \x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x00ÿ\x01\x00\x01\x93\x00\x00\x00\x0e\x00\x0c\x00\x00\x09localhost\x00\x0b\x00\x04\x03\x00\x01\x02\x00[0m" 400 -
+INFO:werkzeug:127.0.0.1 - - [21/Nov/2023 20:52:04] "[33mGET / HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [21/Nov/2023 20:52:04] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [21/Nov/2023 21:04:09] "OPTIONS /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Nov/2023 21:04:09] "[33mPOST /getsAll HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [21/Nov/2023 21:04:18] "OPTIONS /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Nov/2023 21:04:18] "[33mPOST /getsAll HTTP/1.1[0m" 404 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.38:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 939-583-283
+INFO:werkzeug:127.0.0.1 - - [21/Nov/2023 21:05:41] "OPTIONS /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Nov/2023 21:05:41] "[33mPOST /getsAll HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [21/Nov/2023 21:08:10] "OPTIONS /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Nov/2023 21:08:10] "[33mPOST /getsAll HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [21/Nov/2023 21:09:28] "OPTIONS /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Nov/2023 21:09:28] "[33mPOST /getsAll HTTP/1.1[0m" 404 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.38:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 939-583-283
+INFO:werkzeug:127.0.0.1 - - [21/Nov/2023 21:11:16] "OPTIONS /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Nov/2023 21:11:16] "[33mPOST /getsAll HTTP/1.1[0m" 404 -
+INFO:werkzeug: * Detected change in 'E:\\resposGit\\FlaskApiBirdRaptor\\FlaskAPIRaptor\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 939-583-283
+INFO:werkzeug:127.0.0.1 - - [21/Nov/2023 21:13:44] "OPTIONS /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Nov/2023 21:13:44] "[33mPOST /getsAll HTTP/1.1[0m" 404 -
+INFO:werkzeug: * Detected change in 'E:\\resposGit\\FlaskApiBirdRaptor\\FlaskAPIRaptor\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 939-583-283
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.38:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 939-583-283
+INFO:werkzeug:127.0.0.1 - - [21/Nov/2023 21:14:54] "OPTIONS /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Nov/2023 21:14:54] "[33mPOST /getsAll HTTP/1.1[0m" 404 -
+INFO:werkzeug: * Detected change in 'E:\\resposGit\\FlaskApiBirdRaptor\\FlaskAPIRaptor\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 939-583-283
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.38:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 939-583-283
+INFO:werkzeug:127.0.0.1 - - [21/Nov/2023 21:16:19] "OPTIONS /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Nov/2023 21:16:19] "[35m[1mPOST /getsAll HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [21/Nov/2023 21:18:25] "OPTIONS /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Nov/2023 21:18:25] "[35m[1mPOST /getsAll HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [21/Nov/2023 21:18:51] "OPTIONS /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Nov/2023 21:18:51] "[35m[1mPOST /getsAll HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in 'E:\\resposGit\\FlaskApiBirdRaptor\\FlaskAPIRaptor\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 939-583-283
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.38:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 939-583-283
+INFO:werkzeug:127.0.0.1 - - [21/Nov/2023 21:19:35] "OPTIONS /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Nov/2023 21:19:35] "[33mPOST /getsAll HTTP/1.1[0m" 404 -
+INFO:werkzeug: * Detected change in 'E:\\resposGit\\FlaskApiBirdRaptor\\FlaskAPIRaptor\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 939-583-283
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.38:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 939-583-283
+INFO:werkzeug:127.0.0.1 - - [21/Nov/2023 21:21:16] "OPTIONS /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Nov/2023 21:21:16] "POST /getsAll HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'E:\\resposGit\\FlaskApiBirdRaptor\\FlaskAPIRaptor\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 939-583-283
+INFO:werkzeug:127.0.0.1 - - [21/Nov/2023 21:26:15] "OPTIONS /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Nov/2023 21:26:15] "POST /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.38:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 939-583-283
+INFO:werkzeug:127.0.0.1 - - [21/Nov/2023 21:26:31] "OPTIONS /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Nov/2023 21:26:31] "POST /getsAll HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'E:\\resposGit\\FlaskApiBirdRaptor\\FlaskAPIRaptor\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 939-583-283
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.38:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 939-583-283
+INFO:werkzeug:127.0.0.1 - - [21/Nov/2023 21:27:11] "OPTIONS /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Nov/2023 21:27:11] "POST /getsAll HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'E:\\resposGit\\FlaskApiBirdRaptor\\FlaskAPIRaptor\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 939-583-283
+INFO:werkzeug:127.0.0.1 - - [21/Nov/2023 21:27:43] "OPTIONS /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Nov/2023 21:27:43] "[33mPOST /getsAll HTTP/1.1[0m" 404 -
+INFO:werkzeug: * Detected change in 'E:\\resposGit\\FlaskApiBirdRaptor\\FlaskAPIRaptor\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 939-583-283
+INFO:werkzeug:127.0.0.1 - - [21/Nov/2023 21:28:37] "OPTIONS /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Nov/2023 21:28:37] "POST /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Nov/2023 21:33:18] "OPTIONS /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Nov/2023 21:33:18] "POST /getsAll HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'E:\\resposGit\\FlaskApiBirdRaptor\\FlaskAPIRaptor\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 939-583-283
+INFO:werkzeug: * Detected change in 'E:\\resposGit\\FlaskApiBirdRaptor\\FlaskAPIRaptor\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 939-583-283
+INFO:werkzeug:127.0.0.1 - - [21/Nov/2023 21:35:00] "OPTIONS /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Nov/2023 21:35:00] "POST /getsAll HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'E:\\resposGit\\FlaskApiBirdRaptor\\FlaskAPIRaptor\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 939-583-283
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.38:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 939-583-283
+INFO:werkzeug:127.0.0.1 - - [21/Nov/2023 21:38:26] "OPTIONS /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Nov/2023 21:38:26] "POST /getsAll HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'E:\\resposGit\\FlaskApiBirdRaptor\\FlaskAPIRaptor\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 939-583-283
+INFO:werkzeug: * Detected change in 'E:\\resposGit\\FlaskApiBirdRaptor\\FlaskAPIRaptor\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 939-583-283
+INFO:werkzeug:127.0.0.1 - - [21/Nov/2023 21:51:00] "OPTIONS /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Nov/2023 21:51:00] "[35m[1mPOST /getsAll HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in 'E:\\resposGit\\FlaskApiBirdRaptor\\FlaskAPIRaptor\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 939-583-283
+INFO:werkzeug: * Detected change in 'E:\\resposGit\\FlaskApiBirdRaptor\\FlaskAPIRaptor\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 939-583-283
+INFO:werkzeug:127.0.0.1 - - [21/Nov/2023 21:52:05] "OPTIONS /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Nov/2023 21:52:05] "[35m[1mPOST /getsAll HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in 'E:\\resposGit\\FlaskApiBirdRaptor\\FlaskAPIRaptor\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 939-583-283
+INFO:werkzeug:127.0.0.1 - - [21/Nov/2023 21:53:15] "OPTIONS /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Nov/2023 21:53:15] "[35m[1mPOST /getsAll HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in 'E:\\resposGit\\FlaskApiBirdRaptor\\FlaskAPIRaptor\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 939-583-283
+INFO:werkzeug:127.0.0.1 - - [21/Nov/2023 22:00:13] "OPTIONS /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Nov/2023 22:00:13] "[35m[1mPOST /getsAll HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in 'E:\\resposGit\\FlaskApiBirdRaptor\\FlaskAPIRaptor\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 939-583-283
+INFO:werkzeug:127.0.0.1 - - [21/Nov/2023 22:01:22] "OPTIONS /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Nov/2023 22:01:22] "[35m[1mPOST /getsAll HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in 'E:\\resposGit\\FlaskApiBirdRaptor\\FlaskAPIRaptor\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 939-583-283
+INFO:werkzeug:127.0.0.1 - - [21/Nov/2023 22:31:44] "OPTIONS /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Nov/2023 22:31:44] "[35m[1mPOST /getsAll HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [21/Nov/2023 22:41:34] "OPTIONS /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Nov/2023 22:41:34] "[35m[1mPOST /getsAll HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in 'E:\\resposGit\\FlaskApiBirdRaptor\\FlaskAPIRaptor\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 939-583-283
+INFO:werkzeug:127.0.0.1 - - [21/Nov/2023 22:42:20] "OPTIONS /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Nov/2023 22:42:20] "POST /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.38:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 939-583-283
+INFO:werkzeug:127.0.0.1 - - [22/Nov/2023 20:43:08] "OPTIONS /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [22/Nov/2023 20:43:08] "POST /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.38:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 939-583-283
+INFO:werkzeug: * Detected change in 'E:\\resposGit\\FlaskApiBirdRaptor\\FlaskAPIRaptor\\app.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 939-583-283
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.38:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 939-583-283
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.38:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 939-583-283
+INFO:werkzeug:127.0.0.1 - - [22/Nov/2023 21:46:22] "OPTIONS /getsAll HTTP/1.1" 200 -
+ERROR:root:Error en la aplicación: Cursor.execute() takes from 2 to 3 positional arguments but 5 were given
+Traceback (most recent call last):
+  File "E:\resposGit\FlaskApiBirdRaptor\FlaskAPIRaptor\app.py", line 114, in get_all_images
+    rows = dection_result.get_all_detections(source, filter_class,page,end,beginning)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\resposGit\FlaskApiBirdRaptor\FlaskAPIRaptor\Repositories\DetectionsRepositoryFile.py", line 40, in get_all_detections
+    cursor.execute("""select * from detections where dateDetection BETWEEN %s AND %s LIMIT %s,6""",beginning,end,page)
+TypeError: Cursor.execute() takes from 2 to 3 positional arguments but 5 were given
+INFO:werkzeug:127.0.0.1 - - [22/Nov/2023 21:46:23] "[35m[1mPOST /getsAll HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in 'E:\\resposGit\\FlaskApiBirdRaptor\\FlaskAPIRaptor\\Repositories\\DetectionsRepositoryFile.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 939-583-283
+INFO:werkzeug:127.0.0.1 - - [22/Nov/2023 21:47:59] "OPTIONS /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [22/Nov/2023 21:47:59] "POST /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [22/Nov/2023 21:51:05] "OPTIONS /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [22/Nov/2023 21:51:05] "POST /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [22/Nov/2023 21:51:07] "POST /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [22/Nov/2023 21:51:11] "OPTIONS /getsAll HTTP/1.1" 200 -
+ERROR:root:Error en la aplicación: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+Traceback (most recent call last):
+  File "E:\resposGit\FlaskApiBirdRaptor\FlaskAPIRaptor\app.py", line 129, in get_all_images
+    abort(404, message="Todo {} doesn't exist")
+  File "E:\resposGit\codigo-memoria\entornoMemoria\entono_memoria\Lib\site-packages\flask_restful\__init__.py", line 32, in abort
+    original_flask_abort(http_status_code)
+  File "E:\resposGit\codigo-memoria\entornoMemoria\entono_memoria\Lib\site-packages\flask\helpers.py", line 277, in abort
+    current_app.aborter(code, *args, **kwargs)
+  File "E:\resposGit\codigo-memoria\entornoMemoria\entono_memoria\Lib\site-packages\werkzeug\exceptions.py", line 861, in __call__
+    raise self.mapping[code](*args, **kwargs)
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+INFO:werkzeug:127.0.0.1 - - [22/Nov/2023 21:51:11] "[35m[1mPOST /getsAll HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [22/Nov/2023 21:51:23] "OPTIONS /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [22/Nov/2023 21:51:23] "POST /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [22/Nov/2023 21:51:25] "POST /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [22/Nov/2023 21:52:22] "OPTIONS /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [22/Nov/2023 21:52:22] "POST /getsAll HTTP/1.1" 200 -
+ERROR:root:Error en la aplicación: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+Traceback (most recent call last):
+  File "E:\resposGit\FlaskApiBirdRaptor\FlaskAPIRaptor\app.py", line 129, in get_all_images
+    abort(404, message="Todo {} doesn't exist")
+  File "E:\resposGit\codigo-memoria\entornoMemoria\entono_memoria\Lib\site-packages\flask_restful\__init__.py", line 32, in abort
+    original_flask_abort(http_status_code)
+  File "E:\resposGit\codigo-memoria\entornoMemoria\entono_memoria\Lib\site-packages\flask\helpers.py", line 277, in abort
+    current_app.aborter(code, *args, **kwargs)
+  File "E:\resposGit\codigo-memoria\entornoMemoria\entono_memoria\Lib\site-packages\werkzeug\exceptions.py", line 861, in __call__
+    raise self.mapping[code](*args, **kwargs)
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+INFO:werkzeug:127.0.0.1 - - [22/Nov/2023 21:52:26] "[35m[1mPOST /getsAll HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [22/Nov/2023 21:52:27] "OPTIONS /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [22/Nov/2023 21:52:27] "POST /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [22/Nov/2023 21:52:30] "POST /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [22/Nov/2023 21:52:40] "OPTIONS /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [22/Nov/2023 21:52:40] "POST /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [22/Nov/2023 21:52:42] "POST /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [22/Nov/2023 21:52:44] "POST /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [22/Nov/2023 21:52:48] "OPTIONS /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [22/Nov/2023 21:52:48] "POST /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [22/Nov/2023 21:52:54] "OPTIONS /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [22/Nov/2023 21:52:54] "POST /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [22/Nov/2023 21:53:34] "OPTIONS /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [22/Nov/2023 21:53:34] "POST /getsAll HTTP/1.1" 200 -
