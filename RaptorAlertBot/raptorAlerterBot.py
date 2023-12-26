@@ -1,6 +1,5 @@
 import telepot
 
-
 def readtoke(texto):
     f = open(texto, "r")
     texto = f.readline()
