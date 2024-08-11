@@ -373,3 +373,184 @@ INFO:werkzeug:127.0.0.1 - - [22/Nov/2023 21:52:54] "OPTIONS /getsAll HTTP/1.1" 2
 INFO:werkzeug:127.0.0.1 - - [22/Nov/2023 21:52:54] "POST /getsAll HTTP/1.1" 200 -
 INFO:werkzeug:127.0.0.1 - - [22/Nov/2023 21:53:34] "OPTIONS /getsAll HTTP/1.1" 200 -
 INFO:werkzeug:127.0.0.1 - - [22/Nov/2023 21:53:34] "POST /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [21/Jan/2024 15:35:15] "OPTIONS /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Jan/2024 15:35:15] "POST /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Jan/2024 15:35:26] "OPTIONS /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Jan/2024 15:35:26] "POST /getsAll HTTP/1.1" 200 -
+ERROR:root:Error en la aplicación: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+Traceback (most recent call last):
+  File "E:\resposGit\FlaskApiBirdRaptor\FlaskAPIRaptor\app.py", line 129, in get_all_images
+    abort(404, message="Todo {} doesn't exist")
+  File "E:\resposGit\codigo-memoria\entornoMemoria\entono_memoria\Lib\site-packages\flask_restful\__init__.py", line 32, in abort
+    original_flask_abort(http_status_code)
+  File "E:\resposGit\codigo-memoria\entornoMemoria\entono_memoria\Lib\site-packages\flask\helpers.py", line 277, in abort
+    current_app.aborter(code, *args, **kwargs)
+  File "E:\resposGit\codigo-memoria\entornoMemoria\entono_memoria\Lib\site-packages\werkzeug\exceptions.py", line 861, in __call__
+    raise self.mapping[code](*args, **kwargs)
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+INFO:werkzeug:127.0.0.1 - - [21/Jan/2024 15:35:29] "[35m[1mPOST /getsAll HTTP/1.1[0m" 500 -
+ERROR:root:Error en la aplicación: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+Traceback (most recent call last):
+  File "E:\resposGit\FlaskApiBirdRaptor\FlaskAPIRaptor\app.py", line 129, in get_all_images
+    abort(404, message="Todo {} doesn't exist")
+  File "E:\resposGit\codigo-memoria\entornoMemoria\entono_memoria\Lib\site-packages\flask_restful\__init__.py", line 32, in abort
+    original_flask_abort(http_status_code)
+  File "E:\resposGit\codigo-memoria\entornoMemoria\entono_memoria\Lib\site-packages\flask\helpers.py", line 277, in abort
+    current_app.aborter(code, *args, **kwargs)
+  File "E:\resposGit\codigo-memoria\entornoMemoria\entono_memoria\Lib\site-packages\werkzeug\exceptions.py", line 861, in __call__
+    raise self.mapping[code](*args, **kwargs)
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+INFO:werkzeug:127.0.0.1 - - [21/Jan/2024 15:35:29] "[35m[1mPOST /getsAll HTTP/1.1[0m" 500 -
+ERROR:root:Error en la aplicación: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+Traceback (most recent call last):
+  File "E:\resposGit\FlaskApiBirdRaptor\FlaskAPIRaptor\app.py", line 129, in get_all_images
+    abort(404, message="Todo {} doesn't exist")
+  File "E:\resposGit\codigo-memoria\entornoMemoria\entono_memoria\Lib\site-packages\flask_restful\__init__.py", line 32, in abort
+    original_flask_abort(http_status_code)
+  File "E:\resposGit\codigo-memoria\entornoMemoria\entono_memoria\Lib\site-packages\flask\helpers.py", line 277, in abort
+    current_app.aborter(code, *args, **kwargs)
+  File "E:\resposGit\codigo-memoria\entornoMemoria\entono_memoria\Lib\site-packages\werkzeug\exceptions.py", line 861, in __call__
+    raise self.mapping[code](*args, **kwargs)
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+INFO:werkzeug:127.0.0.1 - - [21/Jan/2024 15:35:30] "[35m[1mPOST /getsAll HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [21/Jan/2024 15:35:30] "POST /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Jan/2024 15:35:30] "POST /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Jan/2024 15:35:52] "OPTIONS /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Jan/2024 15:35:52] "POST /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Jan/2024 15:35:56] "POST /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Jan/2024 15:35:57] "OPTIONS /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Jan/2024 15:35:57] "POST /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Jan/2024 15:35:59] "POST /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Jan/2024 15:36:05] "OPTIONS /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [21/Jan/2024 15:36:05] "POST /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 17:44:39] "OPTIONS /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 17:44:39] "POST /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 17:44:43] "POST /getsAll HTTP/1.1" 200 -
+ERROR:app:Exception on /addDetecction [POST]
+Traceback (most recent call last):
+  File "E:\resposGit\codigo-memoria\entornoMemoria\entono_memoria\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\resposGit\codigo-memoria\entornoMemoria\entono_memoria\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\resposGit\codigo-memoria\entornoMemoria\entono_memoria\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "E:\resposGit\codigo-memoria\entornoMemoria\entono_memoria\Lib\site-packages\flask_restful\__init__.py", line 298, in error_router
+    return original_handler(e)
+           ^^^^^^^^^^^^^^^^^^^
+  File "E:\resposGit\codigo-memoria\entornoMemoria\entono_memoria\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\resposGit\codigo-memoria\entornoMemoria\entono_memoria\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\resposGit\FlaskApiBirdRaptor\FlaskAPIRaptor\app.py", line 172, in add_detecction
+    date_imagen = datetime.datetime.strptime(request.headers['dateDetection'], '%Y-%m-%d %H:%M:%S.%f')
+                  ^^^^^^^^^^^^^^^^^
+AttributeError: type object 'datetime.datetime' has no attribute 'datetime'
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 17:44:53] "[35m[1mPOST /addDetecction HTTP/1.1[0m" 500 -
+ERROR:app:Exception on /addDetecction [POST]
+Traceback (most recent call last):
+  File "E:\resposGit\codigo-memoria\entornoMemoria\entono_memoria\Lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\resposGit\codigo-memoria\entornoMemoria\entono_memoria\Lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\resposGit\codigo-memoria\entornoMemoria\entono_memoria\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "E:\resposGit\codigo-memoria\entornoMemoria\entono_memoria\Lib\site-packages\flask_restful\__init__.py", line 298, in error_router
+    return original_handler(e)
+           ^^^^^^^^^^^^^^^^^^^
+  File "E:\resposGit\codigo-memoria\entornoMemoria\entono_memoria\Lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\resposGit\codigo-memoria\entornoMemoria\entono_memoria\Lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\resposGit\FlaskApiBirdRaptor\FlaskAPIRaptor\app.py", line 172, in add_detecction
+    date_imagen = datetime.datetime.strptime(request.headers['dateDetection'], '%Y-%m-%d %H:%M:%S.%f')
+                  ^^^^^^^^^^^^^^^^^
+AttributeError: type object 'datetime.datetime' has no attribute 'datetime'
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 17:46:27] "[35m[1mPOST /addDetecction HTTP/1.1[0m" 500 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 17:47:03] "[35m[1mPOST /addDetecction HTTP/1.1[0m" 500 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 17:47:36] "[35m[1mPOST /addDetecction HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 17:56:03] "[35m[1mPOST /addDetecction HTTP/1.1[0m" 500 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 17:57:14] "[35m[1mPOST /addDetecction HTTP/1.1[0m" 500 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 18:07:45] "[35m[1mPOST /addDetecction HTTP/1.1[0m" 500 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 19:28:55] "[35m[1mPOST /addDetecction HTTP/1.1[0m" 201 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 19:29:22] "OPTIONS /imagen HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 19:29:22] "POST /imagen HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 19:30:05] "OPTIONS /save_validation HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 19:30:05] "[35m[1mPOST /save_validation HTTP/1.1[0m" 201 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 19:30:48] "OPTIONS /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 19:30:48] "POST /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 19:30:50] "POST /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 20:39:37] "OPTIONS /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 20:39:37] "POST /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 20:39:39] "POST /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 20:39:40] "POST /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 20:45:11] "[35m[1mPOST /addDetecction HTTP/1.1[0m" 201 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 20:46:01] "[35m[1mPOST /addDetecction HTTP/1.1[0m" 201 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 20:46:52] "[35m[1mPOST /addDetecction HTTP/1.1[0m" 201 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 20:48:27] "OPTIONS /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 20:48:27] "POST /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 21:02:26] "[35m[1mPOST /addDetecction HTTP/1.1[0m" 201 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 21:02:26] "[35m[1mPOST /addDetecction HTTP/1.1[0m" 201 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 21:02:27] "[35m[1mPOST /addDetecction HTTP/1.1[0m" 201 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 21:02:27] "[35m[1mPOST /addDetecction HTTP/1.1[0m" 201 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 21:02:28] "[35m[1mPOST /addDetecction HTTP/1.1[0m" 201 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 21:02:28] "[35m[1mPOST /addDetecction HTTP/1.1[0m" 201 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 21:02:28] "[35m[1mPOST /addDetecction HTTP/1.1[0m" 201 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 21:02:29] "[35m[1mPOST /addDetecction HTTP/1.1[0m" 201 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 21:02:29] "[35m[1mPOST /addDetecction HTTP/1.1[0m" 201 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 21:02:29] "[35m[1mPOST /addDetecction HTTP/1.1[0m" 201 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 21:02:30] "[35m[1mPOST /addDetecction HTTP/1.1[0m" 201 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 21:02:30] "[35m[1mPOST /addDetecction HTTP/1.1[0m" 201 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 21:02:31] "[35m[1mPOST /addDetecction HTTP/1.1[0m" 201 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 21:04:44] "OPTIONS /imagen HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 21:04:44] "POST /imagen HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 21:05:09] "OPTIONS /save_validation HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 21:05:09] "[35m[1mPOST /save_validation HTTP/1.1[0m" 201 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 21:05:17] "OPTIONS /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 21:05:17] "POST /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 21:05:27] "OPTIONS /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 21:05:27] "POST /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 21:05:33] "OPTIONS /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 21:05:33] "POST /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 21:06:00] "OPTIONS /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 21:06:00] "POST /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 21:06:02] "POST /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 21:06:04] "POST /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 21:06:06] "OPTIONS /getsAll HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [24/Jan/2024 21:06:06] "POST /getsAll HTTP/1.1" 200 -

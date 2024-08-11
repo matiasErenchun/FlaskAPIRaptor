@@ -169,7 +169,7 @@ def add_detecction():
     if not ('class' in request.headers):
         abort(404, message="class error")
 
-    date_imagen = datetime.datetime.strptime(request.headers['dateDetection'], '%Y-%m-%d %H:%M:%S.%f')
+    date_imagen = datetime.strptime(request.headers['dateDetection'], '%Y-%m-%d %H:%M:%S.%f')
     telegram_user_id = int(request.headers['IdTelegramUser'])
     url = request.headers['urlImagen']
     source = request.headers['source']
@@ -183,6 +183,7 @@ def add_detecction():
         raptorAlerterBot.send_messaje(postid)
         return Response("{'a':'b'}", status=201, mimetype='application/json')
     except Exception as e:
+        print(e)
         abort(500, message="Internal Server Error")
 
 
